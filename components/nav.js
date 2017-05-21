@@ -2,7 +2,8 @@ import Head from './head'
 import Link from 'next/link'
 
 const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
+  { href: '/top', label: 'Top' },
+  { href: '', label: '▲ Next.js' },
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
@@ -36,22 +37,25 @@ const Nav = () => (
       }
       nav {
         text-align: center;
+        background-color: black;
+        color: white;
       }
       ul {
         display: flex;
         justify-content: space-between;
       }
       nav > ul {
-        padding: 4px 16px;
+        padding: 12px;
+        margin: 0;
       }
       li {
         display: flex;
         padding: 6px 8px;
       }
       a {
-        color: #067df7;
+        color: white;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 16px;
       }
     `}</style>
   </nav>
