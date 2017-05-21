@@ -1,7 +1,3 @@
-import Page from '../components/page'
+import Top from './top'
 
-export default () => (
-  <div>
-    Welcome    
-  </div>
-)
+export default Top
