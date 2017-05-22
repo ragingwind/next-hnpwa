@@ -13,7 +13,8 @@ export default ({children}) => (
 		.stories {
 			width: 100%;
 			color: #333;
-		}
+      padding: 20px;
+    }
 	`}</style>
 	</div>
 )
