@@ -5,7 +5,7 @@ export default({stories, page=1}) => (
 	  	stories.map((s, i) => (
         <li key={s.id}>
           <span className="count">
-            {(page - 1) * 30 + i}
+            {(page - 1) * 30 + i + 1}
           </span>
           <span className="item">
             <div><a href={s.url} target="_black">{s.title}</a></div>
