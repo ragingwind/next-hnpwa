@@ -3,7 +3,12 @@ import Link from 'next/link'
 
 const links = [
   { href: '/top', label: 'Top' },
-  { href: '', label: '▲ Next.js' },
+  { href: '/new', label: 'New' },
+  { href: '/best', label: 'Best' },
+  { href: '/ask', label: 'Ask' },
+  { href: '/show', label: 'Show' },
+  { href: '/job', label: 'Job' },
+  { href: 'https://zeit.co/blog/next2', label: '▲ Next.js' },
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
@@ -35,23 +40,23 @@ const Nav = () => (
         margin: 0;
         font-family: -apple-system,BlinkMacSystemFont,Avenir Next,Avenir,Helvetica,sans-serif;
       }
-      
+
       nav {
         text-align: center;
         background-color: black;
         color: white;
       }
-      
+
       ul {
         display: flex;
         justify-content: space-between;
       }
-      
+
       nav > ul {
         padding: 12px;
         margin: 0;
       }
-      
+
       li {
         display: flex;
         padding: 6px 8px;

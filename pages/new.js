@@ -9,7 +9,7 @@ export default class extends React.Component {
 
     return {
       page: query.page,
-      stories: await hackernews().stories('top', {
+      stories: await hackernews().stories('new', {
         page: query.page,
         count: 30
       })
