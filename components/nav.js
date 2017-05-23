@@ -35,23 +35,28 @@ const Nav = () => (
         margin: 0;
         font-family: -apple-system,BlinkMacSystemFont,Avenir Next,Avenir,Helvetica,sans-serif;
       }
+      
       nav {
         text-align: center;
         background-color: black;
         color: white;
       }
+      
       ul {
         display: flex;
         justify-content: space-between;
       }
+      
       nav > ul {
         padding: 12px;
         margin: 0;
       }
+      
       li {
         display: flex;
         padding: 6px 8px;
       }
+
       a {
         color: white;
         text-decoration: none;

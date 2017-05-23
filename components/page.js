@@ -3,17 +3,17 @@ import Head from './head'
 import Nav from './nav'
 
 export default ({children}) => (
-	<div>
-		<Head title="Home" />
-		<Nav />
-		<div className="stories">
-			{children}
-		</div>
-		<style jsx>{`
-		.stories {
-			width: 100%;
-			color: #333;
-      padding: 20px;
-	`}</style>
-	</div>
+  <div>
+    <Head title="Home" />
+    <Nav />
+    <div className="stories">
+      {children}
+    </div>
+    <style jsx>{`
+      .stories {
+        width: 100%;
+        color: #333;
+        padding: 20px;
+    `}</style>
+  </div>
 )

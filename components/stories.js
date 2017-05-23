@@ -3,7 +3,7 @@ import Link from "next/link";
 export default({stories, page=1}) => (
   <ui>
     {
-	  	stories.map((s, i) => (
+      stories.map((s, i) => (
         <li key={s.id}>
           <span className="count">
             {(page - 1) * 30 + i + 1}
@@ -24,7 +24,7 @@ export default({stories, page=1}) => (
         margin-top: 12px;
       }
 			
-			.count {
+      .count {
         flex-basis: auto;
         vertical-align: top;
         font-size: 18px;
