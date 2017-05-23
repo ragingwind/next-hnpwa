@@ -1,10 +1,11 @@
 import Link from "next/link";
 
-export default({stories, page=1}) => (
-  <ui>
+export default({type, stories, totalPage = 1, page=1}) => (
+  <div>
+    <ui>
     {
       stories.map((s, i) => (
-        <li key={s.id}>
+        <li key={(s = s || {}) && i}>
           <span className="count">
             {(page - 1) * 30 + i + 1}
           </span>
@@ -14,8 +15,14 @@ export default({stories, page=1}) => (
           </span>
         </li>
       ))
-
     }
+    </ui>
+    <footer>
+    {
+      page <= totalPage &&
+        <Link href={`${type}?page=${page + 1}`}><a>More stories</a></Link>
+    }
+    </footer>
     <style jsx>{`
       li {
         margin: 10px, 0;
@@ -61,7 +68,16 @@ export default({stories, page=1}) => (
       .info {
         font-size: 14px;
       }
+
+      footer {
+        padding: 15px
+      }
+
+      footer a {
+        color: #0e0e0e;
+        text-decoration: none;
+      }
     `}</style>
-  </ui>
+  </div>
 )
 
