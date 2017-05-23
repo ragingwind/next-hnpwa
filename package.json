@@ -3,9 +3,11 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "start:express": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "express": "^4.15.3",
     "firebase-hackernews": "^0.1.1",
     "next": "^2.4.0",
     "react": "^15.5.4",
