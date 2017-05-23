@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 export default({stories, page=1}) => (
   <ui>
     {
@@ -9,7 +10,7 @@ export default({stories, page=1}) => (
           </span>
           <span className="item">
             <div><a href={s.url} target="_black">{s.title}</a></div>
-            <div className="info">{s.by}</div>
+            <div className="info"><Link href={`/user?id=${s.by}`}><a>{s.by}</a></Link></div>
           </span>
         </li>
       ))
@@ -47,9 +48,17 @@ export default({stories, page=1}) => (
         text-decoration: underline;
       }
 
+      .info a {
+        color: gray;
+        text-decoration: none;
+      }
+
+      .info a:hover {
+        text-decoration: underline;
+      }
+      
       .info {
         font-size: 14px;
-        color: grey;
       }
     `}</style>
   </ui>
