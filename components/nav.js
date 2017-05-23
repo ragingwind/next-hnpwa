@@ -16,56 +16,59 @@ const links = [
 
 const Nav = () => (
   <nav>
-    <ul>
-      <li>
-        <Link prefetch href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <ul>
-        {links.map(
-          ({ key, href, label }) => (
-            <li key={key}>
-              <Link href={href}>
-                <a>{label}</a>
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
+  <ul>
+    {
+      links.map(
+        ({ key, href, label }) => (
+          <li key={key}>
+            <Link href={href}><a>{label}</a></Link>
+          </li>
+        ))
+    }
     </ul>
-
     <style jsx>{`
       :global(body) {
         margin: 0;
-        font-family: -apple-system,BlinkMacSystemFont,Avenir Next,Avenir,Helvetica,sans-serif;
+        font-family: Helvetica,sans-serif;
       }
 
       nav {
         text-align: center;
         background-color: black;
         color: white;
+        padding: 12px;
       }
 
       ul {
         display: flex;
-        justify-content: space-between;
-      }
-
-      nav > ul {
-        padding: 12px;
+        padding: 0;
         margin: 0;
       }
 
       li {
-        display: flex;
+        list-style-type: none;
         padding: 6px 8px;
+      }
+
+      li:last-child {
+        position: absolute;
+        right: 0;
       }
 
       a {
         color: white;
         text-decoration: none;
         font-size: 16px;
+      }
+
+      @media (max-width: 600px) {
+        ul {
+          justify-content: none;
+        }
+
+        ul li:last-child {
+          display: none;
+        }
       }
     `}</style>
   </nav>

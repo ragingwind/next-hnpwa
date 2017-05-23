@@ -3,7 +3,7 @@ import Head from './head'
 import Nav from './nav'
 
 export default ({children}) => (
-  <div>
+  <div className="root">
     <Head title="Home" />
     <Nav />
     <div className="stories">
@@ -13,7 +13,14 @@ export default ({children}) => (
       .stories {
         width: 100%;
         color: #333;
-        padding: 20px;
+      }
+
+      @media (max-width: 750px) {
+        .root {
+          padding: 0;
+          width: auto;
+        }
+      }
     `}</style>
   </div>
 )
