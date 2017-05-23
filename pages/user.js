@@ -1,5 +1,6 @@
 import React from 'react'
 import Page from '../components/page'
+import User from "../components/user"
 import hackernews from 'firebase-hackernews'
 
 export default class extends React.Component {
@@ -12,7 +13,7 @@ export default class extends React.Component {
 
   render() {
     return <Page>
-      {JSON.stringify(this.props.user)}
+      <User user={this.props.user} />
     </Page>
   }
 }
