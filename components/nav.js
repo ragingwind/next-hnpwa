@@ -16,15 +16,12 @@ const links = [
 
 const Nav = () => (
   <nav>
-  <ul>
-    {
-      links.map(
-        ({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href}><a>{label}</a></Link>
-          </li>
+    <ul>
+      {
+        links.map(({ key, href, label }) => (
+          <li key={key}><Link href={href}><a>{label}</a></Link></li>
         ))
-    }
+      }
     </ul>
     <style jsx>{`
       :global(body) {
@@ -37,6 +34,11 @@ const Nav = () => (
         background-color: black;
         color: white;
         padding: 12px;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        right: 0;
       }
 
       ul {

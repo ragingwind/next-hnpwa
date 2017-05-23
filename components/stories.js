@@ -14,16 +14,17 @@ export default({stories, page=1}) => (
           </span>
         </li>
       ))
+
     }
     <style jsx>{`
       li {
         margin: 10px, 0;
         list-style-type: none;
-        padding: 5px;
+        padding-left: 15px;
         display: flex;
-        margin-top: 12px;
+        margin-top: 14px;
       }
-			
+
       .count {
         flex-basis: auto;
         vertical-align: top;
@@ -56,7 +57,7 @@ export default({stories, page=1}) => (
       .info a:hover {
         text-decoration: underline;
       }
-      
+
       .info {
         font-size: 14px;
       }
