@@ -13,6 +13,6 @@ export default class extends React.Component {
   render() {
     return <Page>
       {JSON.stringify(this.props.user)}
-  	</Page>
+    </Page>
   }
 }
