@@ -1,34 +1,23 @@
-import Head from './head'
 import Link from 'next/link'
 
 const links = [
-  { href: '/top', label: 'Top' },
-  { href: '/new', label: 'New' },
-  { href: '/best', label: 'Best' },
-  { href: '/ask', label: 'Ask' },
-  { href: '/show', label: 'Show' },
-  { href: '/job', label: 'Job' },
-  { href: 'https://zeit.co/blog/next2', label: '▲ Next.js' },
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+  {href: '/top', label: 'Top'},
+  {href: '/new', label: 'New'},
+  {href: '/best', label: 'Best'},
+  {href: '/ask', label: 'Ask'},
+  {href: '/show', label: 'Show'},
+  {href: '/job', label: 'Job'},
+  {href: 'https://zeit.co/blog/next2', label: '▲ Next.js'},
+]
 
 const Nav = () => (
   <nav>
-    <ul>
-      {
-        links.map(({ key, href, label }) => (
-          <li key={key}><Link href={href}><a>{label}</a></Link></li>
-        ))
-      }
-    </ul>
+    <header>{
+      links.map((link, i) => (<span key={`nav-link-${i}`}>
+        <Link href={link.href}><a>{link.label}</a></Link>
+      </span>))
+    }</header>
     <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: Helvetica,sans-serif;
-      }
-
       nav {
         text-align: center;
         background-color: black;
@@ -41,20 +30,19 @@ const Nav = () => (
         right: 0;
       }
 
-      ul {
+      header {
         display: flex;
         padding: 0;
         margin: 0;
       }
 
-      li {
-        list-style-type: none;
+      span {
         padding: 6px 8px;
       }
 
-      li:last-child {
+      header span:last-child {
         position: absolute;
-        right: 0;
+        right: 10px;
       }
 
       a {
@@ -64,11 +52,11 @@ const Nav = () => (
       }
 
       @media (max-width: 600px) {
-        ul {
+        header {
           justify-content: none;
         }
 
-        ul li:last-child {
+        header span:last-child {
           display: none;
         }
       }
