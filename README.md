@@ -23,4 +23,4 @@ yarn build
 
 # License
 
-MIt @ CodeBusiking
+MIT @ CodeBusking
