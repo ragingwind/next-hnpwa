@@ -6,8 +6,8 @@ export default({type, stories, totalPage = 1, page=1}) => (
     {
       stories.map((s, i) => (
         <li key={(s = s || {}) && i}>
-          <span className="count">
-            {(page - 1) * 30 + i + 1}
+          <span className="score">
+            {s.score}
           </span>
           <span className="item">
             <div><a href={s.url} target="_black">{s.title}</a></div>
@@ -32,12 +32,13 @@ export default({type, stories, totalPage = 1, page=1}) => (
         margin-top: 14px;
       }
 
-      .count {
+      .score {
         flex-basis: auto;
         vertical-align: top;
         font-size: 18px;
-        width: 20px;
+        width: 30px;
         padding-right: 15px;
+        text-align: center;
       }
 
       .item {
