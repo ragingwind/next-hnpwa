@@ -20,7 +20,7 @@ export default({type, stories, totalPage = 1, page=1}) => (
     <footer>
     {
       page <= totalPage &&
-        <Link href={`${type}?page=${page + 1}`}><a>More stories</a></Link>
+        <Link href={`${type}?page=${Number(page) + 1}`}><a>More stories</a></Link>
     }
     </footer>
     <style jsx>{`
