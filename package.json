@@ -4,7 +4,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "start:express": "NODE_ENV=production node server.js"
+    "start:express": "NODE_ENV=production node server.js",
+    "deploy": "now --name=next-hn-pk --public"
   },
   "dependencies": {
     "firebase-hackernews": "^0.4.1",
