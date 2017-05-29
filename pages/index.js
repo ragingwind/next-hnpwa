@@ -1,3 +1,3 @@
-import Top from './top'
+import Stories from './_stories'
 
-export default Top
+export default Stories
