@@ -8,7 +8,7 @@
 
 ## Getting Started
 
-Watch [demo](https://next-hn-primer-kit-mcqhyeardh.now.sh)
+Watch [demo](https://next-hn-pk.now.sh/)
 
 ```sh
 # Run this app in development mode
