@@ -32,7 +32,7 @@ export default class Comment extends React.Component {
         dangerouslySetInnerHTML={{__html: this.state.comment.text}}>
       </span>
       <span className="meta">
-        by {this.props.id}
+        by {this.state.comment.by}
       </span>
       <ul>
         {comments}
