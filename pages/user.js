@@ -5,12 +5,14 @@ import fetch from '../lib/fetch-user'
 
 export default class extends React.Component {
   static async getInitialProps({query, asPath}) {
-    return await fetch(asPath.substr(1), query.id)
+    const props = await fetch(query.id)
+    return props
   }
 
   render() {
+    const {user} = this.props
     return <Page>
-			<User user={this.props.user} />
+      <User user={user} />
     </Page>
   }
 }
