@@ -11,7 +11,14 @@ export default({type, stories, totalPage = 1, page=1}) => (
           </span>
           <span className="item">
             <div><a href={s.url} target="_black">{s.title}</a></div>
-            <div className="info"><Link href={`/user?id=${s.by}`}><a>{s.by}</a></Link></div>
+            <div className="info">
+              <span>
+                <Link href={`/user?id=${s.by}`}><a>{s.by} </a></Link>
+              </span>
+              <span>
+                | <Link href={`/comments?id=${s.id}`}><a>{s.descendants} comments</a></Link>
+              </span>
+            </div>
           </span>
         </li>
       ))
