@@ -25,20 +25,22 @@ export default({type, stories, totalPage = 1, page=1}) => (
     </footer>
     <style jsx>{`
       li {
-        margin: 10px, 0;
         list-style-type: none;
-        padding-left: 15px;
-        display: flex;
-        margin-top: 14px;
+        position: relative;
+        padding: 20px 30px 20px 80px;
+        border-bottom: 1px solid #eee;
+        line-height: 20px;
       }
 
       .score {
-        flex-basis: auto;
-        vertical-align: top;
         font-size: 18px;
-        width: 30px;
-        padding-right: 15px;
+        font-weight: 700;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 80px;
         text-align: center;
+        margin-top: -10px;
       }
 
       .item {
