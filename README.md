@@ -1,6 +1,6 @@
 # next-hn-primer-kit
 
-> Primer Kit for Next.js Hacker News PWA. It provides less codes which are not enough for production, but it is essential and sufficient to help you to understand how it works with the framework, PWA. This project highly depends on [firebase-hackernews](https://www.npmjs.com/package/firebase-hackernews) api, checkout if you feel that want to know how it works in a way of using firebase API [Hacker News firebase API](https://github.com/HackerNews/API) more
+> Primer Kit for Next.js Hacker News. It provides less codes which are not enough for production, but it is essential and sufficient to help you to understand how it works with the framework. This project highly depends on [firebase-hackernews](https://www.npmjs.com/package/firebase-hackernews) api, checkout if you feel that want to know how it works in a way of using firebase API [Hacker News firebase API](https://github.com/HackerNews/API) more
 
 <p align="center">
 <img src="https://cloud.githubusercontent.com/assets/124117/26563945/8166651a-4515-11e7-8ceb-c41bc9e8644b.png" width="640" />
