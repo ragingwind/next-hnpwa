@@ -10,7 +10,7 @@ const links = [
   {href: 'https://zeit.co/blog/next2', label: '▲ Next.js'},
 ]
 
-const Nav = () => (
+export default () => (
   <nav>
     <header>{
       links.map((link, i) => (<span key={`nav-link-${i}`}>
@@ -63,5 +63,3 @@ const Nav = () => (
     `}</style>
   </nav>
 )
-
-export default Nav
