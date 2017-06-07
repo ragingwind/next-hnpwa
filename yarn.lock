@@ -1496,16 +1496,16 @@ find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-firebase-hackernews@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/firebase-hackernews/-/firebase-hackernews-0.4.1.tgz#588711e69414f265f1fed70fed74b4a65d91fa43"
+firebase-hackernews@^0.12.2:
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/firebase-hackernews/-/firebase-hackernews-0.12.2.tgz#8e4e70c9fa1c7a140d7167ac57ddc1c679d21437"
   dependencies:
-    firebase "^3.9.0"
+    firebase "^4.1.1"
     isomorphic-unfetch "^1.0.0"
 
-firebase@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/firebase/-/firebase-3.9.0.tgz#c4237f50f58eeb25081b1839d6cbf175f8f7ed9b"
+firebase@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.1.1.tgz#2c6a07c550e13b9404e38666b646395b1af6d792"
   dependencies:
     dom-storage "^2.0.2"
     faye-websocket "0.9.3"
