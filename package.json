@@ -2,10 +2,10 @@
   "name": "next-hn-primer-kit",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "start:express": "NODE_ENV=production node server.js",
-    "deploy": "now --name=next-hn-pk --public"
+    "build": "next build && node ./build/service-worker.js",
+    "start:next": "next start",
+    "start": "NODE_ENV=production node server.js",
+    "deploy": "now --name=next-hn --public"
   },
   "dependencies": {
     "firebase-hackernews": "^0.12.2",
@@ -14,6 +14,10 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "globby": "^6.1.0",
+    "load-json-file": "^2.0.0",
+    "workbox-build": "^1.0.1",
+    "workbox-webpack-plugin": "^1.0.1"
   }
 }

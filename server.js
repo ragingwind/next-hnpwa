@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const next = require('next')
 const hackernews = require('firebase-hackernews')
@@ -10,6 +11,10 @@ app.prepare()
   .then(() => hackernews().watch())
   .then(() => {
     const server = express()
+
+    server.use('/service-worker.js',
+      express.static(path.resolve(__dirname, './.next/service-worker.js'))
+    )
 
     server.get('*', (req, res) => {
       return handle(req, res)
