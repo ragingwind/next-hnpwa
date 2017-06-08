@@ -11,8 +11,8 @@ const links = [
 ]
 
 export default () => (
-  <nav>
-    <header>{
+  <nav role="navigation">
+    <header role="banner">{
       links.map((link, i) => (<span key={`nav-link-${i}`}>
         <Link href={link.href}><a>{link.label}</a></Link>
       </span>))

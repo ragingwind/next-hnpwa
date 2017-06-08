@@ -8,6 +8,7 @@
     "deploy": "now --name=next-hn --public"
   },
   "dependencies": {
+    "compression": "^1.6.2",
     "firebase-hackernews": "^0.12.2",
     "next": "^2.4.0",
     "react": "^15.5.4",
