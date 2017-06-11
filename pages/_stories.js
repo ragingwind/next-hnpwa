@@ -1,7 +1,9 @@
 import React from 'react';
-import Page from '../components/page'
-import Stories from '../components/stories'
+import dynamic from 'next/dynamic'
 import fetch from '../lib/fetch-stories'
+
+const Page = dynamic(import('../components/page'))
+const Stories = dynamic(import('../components/stories'))
 
 export default class extends React.Component {
   static async getInitialProps({query, pathname}) {

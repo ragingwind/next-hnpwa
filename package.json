@@ -1,16 +1,18 @@
 {
-  "name": "next-hn-primer-kit",
+  "name": "next-hn-prime-kit",
   "scripts": {
     "dev": "next",
-    "build": "next build && node ./build/service-worker.js",
+    "build": "next build && node generate-sw.js",
     "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
     "deploy": "now --name=next-hn --public"
   },
   "dependencies": {
     "compression": "^1.6.2",
-    "firebase-hackernews": "^0.12.2",
-    "next": "^2.4.0",
+    "firebase-hackernews": "^0.12.3",
+    "next": "beta",
+    "preact": "^8.1.0",
+    "preact-compat": "^3.16.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
