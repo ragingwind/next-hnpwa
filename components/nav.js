@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
 const links = [
+  {href: 'https://zeit.co/blog/next2', label: '▲'},
   {href: '/top', label: 'Top'},
   {href: '/new', label: 'New'},
   {href: '/best', label: 'Best'},
   {href: '/ask', label: 'Ask'},
   {href: '/show', label: 'Show'},
   {href: '/job', label: 'Job'},
-  {href: 'https://zeit.co/blog/next2', label: '▲ Next.js'},
 ]
 
 export default () => (
