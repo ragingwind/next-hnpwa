@@ -10,7 +10,9 @@ export default class extends React.Component {
     if (pathname === '/') {
       pathname = '/top'
     }
-    const props = await fetch(pathname.substr(1), Number(query.page || 1), 30)
+
+    const page = query && query.page ? query.page : 1
+    const props = await fetch(pathname.substr(1), Number(page || 1), 30)
     return props
   }
 
