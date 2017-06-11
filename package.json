@@ -2,7 +2,7 @@
   "name": "next-hn-prime-kit",
   "scripts": {
     "dev": "next",
-    "build": "next build && node generate-sw.js",
+    "build": "chmod -R u+x node_modules/next/dist/bin && next build && node generate-sw.js",
     "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
     "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
@@ -13,7 +13,9 @@
     "firebase-hackernews": "^0.12.3",
     "next": "beta",
     "preact": "^8.1.0",
-    "preact-compat": "^3.16.0"
+    "preact-compat": "^3.16.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
     "express": "^4.15.3",

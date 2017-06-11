@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Nav from './nav'
 
 export default ({children}) => (
-  <div className="root">
+  <main className="root">
     <Nav />
     <div className="stories">
       {children}
@@ -28,5 +28,5 @@ export default ({children}) => (
         }
       }
     `}</style>
-  </div>
+  </main>
 )
