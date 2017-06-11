@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build && node generate-sw.js",
+    "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
     "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
     "deploy": "now --name=next-hn --public"
@@ -12,14 +13,13 @@
     "firebase-hackernews": "^0.12.3",
     "next": "beta",
     "preact": "^8.1.0",
-    "preact-compat": "^3.16.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "preact-compat": "^3.16.0"
   },
   "devDependencies": {
     "express": "^4.15.3",
     "globby": "^6.1.0",
     "load-json-file": "^2.0.0",
+    "webpack-bundle-analyzer": "^2.8.2",
     "workbox-build": "^1.0.1",
     "workbox-webpack-plugin": "^1.0.1"
   }
