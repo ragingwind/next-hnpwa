@@ -34,11 +34,11 @@ function chunks(app) {
         reject(err)
       }
 
-      const root = `/_next/chunks`
+      const root = `/_next/webpack/chunks`
       app.precaches = app.precaches.concat(files
         .filter(file => /\.js$/.test(file))
         .map(file => {
-          // req /_next/chunks/22321e97-8895-48db-b915-82e255f3faa8.js
+          // req /_next/webpack/chunks/22321e97-8895-48db-b915-82e255f3faa8.js
           return path.join(root, file)
         })
       )
