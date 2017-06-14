@@ -76,7 +76,14 @@ importScripts('https://unpkg.com/firebase-hackernews@2.9.0/dist/firebase-hackern
 
 const workboxSW = new WorkboxSW({clientsClaim: true})
 
+// set precahe listed item
 workboxSW.precache(${precache})
+
+// cache very first page by sw
+workboxSW.router.registerRoute(
+	'/',
+	workboxSW.strategies.staleWhileRevalidate()
+)
 
 hackernews.init(firebase, {
 	watch: true
