@@ -2,6 +2,7 @@
   "name": "next-hn-prime-kit",
   "scripts": {
     "dev": "next",
+    "lint": "xo",
     "build": "chmod -R u+x node_modules/next/dist/bin && next build && node generate-sw.js",
     "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
     "start:next": "next start",
@@ -10,7 +11,9 @@
   },
   "dependencies": {
     "compression": "^1.6.2",
-    "firebase-hackernews": "^0.12.3",
+    "firebase": "^4.1.2",
+    "firebase-hackernews": "^2.9.0",
+    "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.1.1",
     "next": "beta",
     "preact": "^8.1.0",
@@ -24,6 +27,18 @@
     "load-json-file": "^2.0.0",
     "webpack-bundle-analyzer": "^2.8.2",
     "workbox-build": "^1.0.1",
-    "workbox-webpack-plugin": "^1.0.1"
+    "workbox-webpack-plugin": "^1.0.1",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "semicolon": false,
+    "env": {
+      "browser": true
+    },
+    "globals": [
+      "window",
+      "performance",
+      "firebase"
+    ]
   }
 }

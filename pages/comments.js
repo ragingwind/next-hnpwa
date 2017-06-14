@@ -1,21 +1,24 @@
-import React from 'react';
+import React from 'react'
 import Page from '../components/page'
 import Comment from '../components/comment'
-import fetch from '../lib/fetch-comments'
+import fetchItem from '../lib/fetch-item'
+import fetchKids from '../lib/fetch-kids'
 
 export default class extends React.Component {
-  static async getInitialProps({query}) {
-    const props = await fetch(query.id)
-    return props
-  }
+	static async getInitialProps({query}) {
+		const props = {
+			kids: await fetchKids(query.id),
+			item: await fetchItem(query.id)
+		}
 
-  render() {
-    const comments = this.props.comment.kids.map(id => (
-      <Comment key={id} id={id} />
-    ))
+		return props
+	}
 
-    return <Page>
-      {comments}
-    </Page>
-  }
+	render() {
+		const comments = this.props.item.kids.map(id => (
+			<Comment key={id} id={id} kids={this.props.kids}/>
+		))
+
+		return <Page>{comments}</Page>
+	}
 }

@@ -1,61 +1,49 @@
 import React from 'react'
 
-// sw snippets from https://github.com/codebusking/vue-hn-pwa-guide-kit/tree/master/build
+// Service Worker snippets from https://github.com/codebusking/vue-hn-pwa-guide-kit/tree/master/build
 // all of comments was removed to convenience reason
 
-const swDevRegistration = 
+const swDevRegistration =
 `self.addEventListener('install', () => self.skipWaiting())
 self.addEventListener('activate', () => {
-  self.clients.matchAll({ type: 'window' }).then(windowClients => {
-    for (let windowClient of windowClients) {
-      windowClient.navigate(windowClient.url)
-    }
-  })
+	self.clients.matchAll({ type: 'window' }).then(windowClients => {
+		for (let windowClient of windowClients) {
+			windowClient.navigate(windowClient.url)
+		}
+	})
 })`
 
-const swProdRegistration = 
+const swProdRegistration =
 `(function() {
-  'use strict'
-  const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
-      window.location.hostname === '[::1]' ||
-      window.location.hostname.match(
-        /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-      )
-    )
+	'use strict'
+	const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
+			window.location.hostname === '[::1]' ||
+			window.location.hostname.match(
+				/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+			)
+		)
 
-  window.addEventListener('load', function() {
-      if ('serviceWorker' in navigator &&
-          (window.location.protocol === 'https:' || isLocalhost)) {
-        navigator.serviceWorker.register('service-worker.js')
-        .then(function(registration) {
-          registration.onupdatefound = function() {
-            if (navigator.serviceWorker.controller) {
-              const installingWorker = registration.installing
+	window.addEventListener('load', function() {
+		if ('serviceWorker' in navigator &&
+				(window.location.protocol === 'https:' || isLocalhost)) {
 
-              installingWorker.onstatechange = function() {
-                switch (installingWorker.state) {
-                  case 'installed':
-                    break
-                  case 'redundant':
-                    throw new Error('The installing ' +
-                                    'service worker became redundant.')
-                  default:
-                    // Ignore
-                }
-              }
-            }
-          }
-        }).catch(function(e) {
-          console.error('Error during service worker registration:', e)
-        })
-      }
-  })
+			navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+				console.log('ServiceWorker registration successful with scope: ', registration.scope);
+			}).catch(function(e) {
+				console.error('Error during service worker registration:', e)
+			})
+
+			navigator.serviceWorker.addEventListener('message', async event => {
+				console.log('ready to use hackernews()', event)
+			})
+		}
+	})
 })()`
 
 export default () => (
-  <script dangerouslySetInnerHTML={{
-    __html: process.env.NODE_ENV === 'production'
-      ? swProdRegistration
-      : swDevRegistration
-  }} />
+	<script dangerouslySetInnerHTML={{
+		__html: process.env.NODE_ENV === 'production'
+			? swProdRegistration
+			: swDevRegistration
+	}} />
 )
