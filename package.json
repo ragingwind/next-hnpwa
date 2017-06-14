@@ -7,7 +7,7 @@
     "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
     "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
-    "deploy": "now --name=next-hn --public"
+    "deploy": "now --name=next-hnpwa --public"
   },
   "dependencies": {
     "compression": "^1.6.2",
