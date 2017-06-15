@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
-import fetch from '../lib/fetch-item'
 
 export default class Comment extends React.Component {
 	constructor() {
@@ -13,28 +11,34 @@ export default class Comment extends React.Component {
 		}
 	}
 
-	async componentDidMount() {
+	componentDidMount() {
 		const comment = this.props.kids.items[this.props.id]
 
-		this.setState({
-			comment
-		})
+		if (comment) {
+			this.setState({comment})
+		} else {
+			console.warn('No exist a comment, failed load from cached items')
+		}
 	}
 
 	render() {
-		const comments = this.state.comment &&
-			this.state.comment.kids &&
-			this.state.comment.kids.map(id => (
+		const comments = (this.state.comment.kids || []).map(id => (
 			<Comment key={id} id={id} kids={this.props.kids} />
 		))
 
-		return <div className="comment">
-			<span className="text"
-				dangerouslySetInnerHTML={{__html: this.state.comment.text}}>
-			</span>
-			<span className="meta">
-				by {this.state.comment.by}
-			</span>
+		return <div>
+				<div>{
+						this.state.comment.text && this.state.comment.text.length > 0 ?
+						(<div className="comment">
+							<span className="text"
+								dangerouslySetInnerHTML={{__html: this.state.comment.text}}>
+							</span>
+							<span className="meta">
+								{this.state.comment.by}
+							</span>
+						</div>) :
+						(<div />)
+				}</div>
 			<ul>
 				{comments}
 			</ul>
