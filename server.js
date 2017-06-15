@@ -22,13 +22,9 @@ app.prepare()
 		const server = express()
 
 		server.use(compression({threshold: 0}))
-		server.use('/service-worker.js', serve('./.next/service-worker.js'))
-		server.use('/firebase-hackernews-sw.js', serve('./firebase-hackernews-sw.js'))
-		server.use('/manifest.json', serve('./static/manifest.json'))
-
-		server.get('/', (req, res) => {
-			renderAndCache(req, res, '/')
-		})
+		server.use('/static', serve('./static', true))
+		server.use('/service-worker.js', serve('./.next/service-worker.js', true))
+		server.use('/manifest.json', serve('./static/manifest.json', true))
 
 		server.get('/hackernews/*', (req, res) => {
 			hnservice.fetch(req.path)
@@ -53,33 +49,3 @@ app.prepare()
 			console.log('> Ready on http://localhost:3000')
 		})
 })
-
-// code snippets from [next.js/server.js - zeit/next.js](https://goo.gl/wn1WBK)
-const ssrCache = new LRUCache({
-	max: 100,
-	maxAge: 1000 * 60 * 60
-})
-
-function getCacheKey(req) {
-	return `${req.url}`
-}
-
-function renderAndCache(req, res, pagePath, queryParams) {
-	const key = getCacheKey(req)
-
-	// If we have a page in the cache, let's serve it
-	if (ssrCache.has(key)) {
-		res.send(ssrCache.get(key))
-		return
-	}
-
-	// If not let's render the page into HTML
-	app.renderToHTML(req, res, pagePath, queryParams)
-		.then(html => {
-			ssrCache.set(key, html)
-			res.send(html)
-		})
-		.catch(err => {
-			app.renderError(err, req, res, pagePath, queryParams)
-		})
-}
