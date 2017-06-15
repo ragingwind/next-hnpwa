@@ -3,8 +3,10 @@
   "scripts": {
     "dev": "next",
     "lint": "xo",
-    "build": "chmod -R u+x node_modules/next/dist/bin && next build && node generate-sw.js",
-    "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
+    "build:next": "chmod -R u+x node_modules/next/dist/bin && next build && node generate-sw.js",
+    "build": "npm run build:next --preact",
+    "build:report": "npm run build:next --report && webpack-bundle-analyzer .next/stats.json",
+    "build:preact": "npm run build:next --preact",
     "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
     "deploy": "now --name=next-hnpwa --public"
@@ -18,8 +20,8 @@
     "next": "beta",
     "preact": "^8.1.0",
     "preact-compat": "^3.16.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0"
   },
   "devDependencies": {
     "express": "^4.15.3",

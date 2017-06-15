@@ -6,11 +6,15 @@ module.exports = {
 			return config
 		}
 
-		// using preact instead of minified version of react
-		// in production for mobile
-		config.resolve.alias = {
-			react: 'preact-compat/dist/preact-compat',
-			'react-dom': 'preact-compat/dist/preact-compat'
+		// yarn build:preact
+		if (process.env.npm_config_preact) {
+			// using preact instead of minified version of react
+			// to use super lightweight package
+			console.log('> Using Preact instead of React')
+			config.resolve.alias = {
+				react: 'preact-compat/dist/preact-compat',
+				'react-dom': 'preact-compat/dist/preact-compat'
+			}
 		}
 
 		// yarn build:report
