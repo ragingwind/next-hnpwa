@@ -1,6 +1,6 @@
 # next-hnpwa-guide-kit
 
-> Guide Kit for Next.js Hacker News. It provides less codes which are not enough for production, but it is essential and sufficient to help you to understand how it works with the framework. This project highly depends on [firebase-hackernews](https://www.npmjs.com/package/firebase-hackernews) api, checkout if you feel that want to know how it works in a way of using firebase API [Hacker News firebase API](https://github.com/HackerNews/API) more
+> Guide Kit for Next.js HNPWA (Hacker News PWA). It looks like to provide less codes in the limitted feature, which are not enough for production. But it is essential and sufficient to help you to understand how it works HNPWA with the framework. Backed by [firebase-hackernews](https://www.npmjs.com/package/firebase-hackernews) with [Hacker News firebase API](https://github.com/HackerNews/API), which is [running on service worker](https://github.com/codebusking/next-hnpwa-guide-kit/blob/master/generate-sw.js#L71) with brand new service worker SDK from Google, called Workbox
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124117/27153738-93aab18e-518d-11e7-92d9-d4c70e05ca4e.png" width="1024" />
