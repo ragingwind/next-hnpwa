@@ -4,7 +4,6 @@ const compression = require('compression')
 const next = require('next')
 const firebase = require('firebase')
 const hackernews = require('firebase-hackernews')
-const LRUCache = require('lru-cache')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -48,4 +47,4 @@ app.prepare()
 
 			console.log('> Ready on http://localhost:3000')
 		})
-})
+	})
