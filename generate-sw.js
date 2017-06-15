@@ -72,7 +72,7 @@ const swSnippet = (precache) =>
 `importScripts('https://unpkg.com/workbox-sw@0.0.2')
 importScripts('https://www.gstatic.com/firebasejs/4.1.2/firebase-app.js')
 importScripts('https://www.gstatic.com/firebasejs/4.1.2/firebase-database.js')
-importScripts('https://unpkg.com/firebase-hackernews@2.9.0/dist/firebase-hackernews-sw.js')
+importScripts('https://unpkg.com/firebase-hackernews@2.10.0/dist/firebase-hackernews-sw.js')
 
 const workboxSW = new WorkboxSW({clientsClaim: true})
 
