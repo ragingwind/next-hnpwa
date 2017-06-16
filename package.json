@@ -13,7 +13,7 @@
     "build:preact": "npm run build:next --preact",
     "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
-    "deploy": "now --name=next-hnpwa --public"
+    "deploy": "npm version patch && now --name=next-hnpwa --public"
   },
   "dependencies": {
     "compression": "^1.6.2",
