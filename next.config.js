@@ -6,7 +6,7 @@ module.exports = {
 			return config
 		}
 
-		// yarn build:preact
+		// yarn build:next --preact
 		if (process.env.npm_config_preact) {
 			// using preact instead of minified version of react
 			// to use super lightweight package
