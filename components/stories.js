@@ -5,7 +5,7 @@ export default({type, stories, totalPage = 1, page = 1}) => (
 		<ui>
 		{
 			stories.map((s, i) => (
-				<li key={(s = s || {}) && i}>
+				<li key={s || i}>
 					<span className="score">
 						{s.score}
 					</span>
