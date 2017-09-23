@@ -1,7 +1,7 @@
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 module.exports = {
-	webpack: async (config, {dev}) => {
+	webpack: (config, {dev}) => {
 		if (dev) {
 			return config
 		}

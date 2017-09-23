@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next",
     "lint": "xo",
-    "build:next": "chmod -R u+x node_modules/next/dist/bin && next build && node generate-sw.js",
+    "build:next": "next build && node generate-sw.js",
     "build": "npm run build:next --preact",
     "build:report": "npm run build:next --report && webpack-bundle-analyzer .next/stats.json",
     "start:next": "next start",
@@ -19,7 +19,7 @@
     "firebase": "^4.1.2",
     "firebase-hackernews": "^2.9.0",
     "isomorphic-fetch": "^2.2.1",
-    "next": "beta",
+    "next": "^3.2.2",
     "preact": "^8.1.0",
     "preact-compat": "^3.16.0",
     "react": "^15.6.0",
