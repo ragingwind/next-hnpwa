@@ -8,7 +8,7 @@
     "dev": "next",
     "lint": "xo",
     "build:next": "next build && node generate-sw.js",
-    "build": "npm run build:next --preact",
+    "build": "npm run build:next",
     "build:report": "npm run build:next --report && webpack-bundle-analyzer .next/stats.json",
     "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
@@ -22,8 +22,8 @@
     "next": "^3.2.2",
     "preact": "^8.1.0",
     "preact-compat": "^3.16.0",
-    "react": "^15.6.0",
-    "react-dom": "^15.6.0"
+    "react": "next",
+    "react-dom": "next"
   },
   "devDependencies": {
     "express": "^4.15.3",
