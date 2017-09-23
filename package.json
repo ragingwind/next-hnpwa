@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "xo",
     "build": "next build && node generate-sw.js",
-    "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
+    "report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
     "start": "NODE_ENV=production node server.js",
     "deploy": "npm version patch && now --name=next-hnpwa --public"
   },

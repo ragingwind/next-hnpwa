@@ -11,20 +11,14 @@
 Watch the [demo](https://next-hnpwa.now.sh/)
 
 ```sh
-# Run this app in development mode
-npm dev
-
 # Starts the application in production mode with express
 npm start
-
-# Starts the application in production mode with next
-npm start:next
 
 # Builds the app for production to the .next folder.
 npm build
 
-# Builds the app for analyzing
-npm build:report
+# Make a reprot in analyzing
+npm report
 ```
 
 # License
