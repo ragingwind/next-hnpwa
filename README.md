@@ -12,21 +12,21 @@ Watch the [demo](https://next-hnpwa.now.sh/)
 
 ```sh
 # Run this app in development mode
-yarn dev
+npm dev
 
 # Starts the application in production mode with express
-yarn start
+npm start
 
 # Starts the application in production mode with next
-yarn start:next
+npm start:next
 
 # Builds the app for production to the .next folder.
-yarn build
+npm build
 
 # Builds the app for analyzing
-yarn build:report
+npm build:report
 ```
 
 # License
 
-MIT @ CodeBusking
+MIT @ CODEBUSKING
