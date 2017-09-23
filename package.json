@@ -7,9 +7,8 @@
   "scripts": {
     "dev": "next",
     "lint": "xo",
-    "build:next": "next build && node generate-sw.js",
-    "build": "npm run build:next",
-    "build:report": "npm run build:next --report && webpack-bundle-analyzer .next/stats.json",
+    "build": "next build && node generate-sw.js",
+    "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
     "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
     "deploy": "npm version patch && now --name=next-hnpwa --public"
@@ -20,8 +19,8 @@
     "firebase-hackernews": "^2.9.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "^3.2.2",
-    "react": "next",
-    "react-dom": "next"
+    "react": "16.0.0-rc.3",
+    "react-dom": "16.0.0-rc.3"
   },
   "devDependencies": {
     "express": "^4.15.3",
