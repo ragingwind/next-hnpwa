@@ -5,11 +5,9 @@
     "node": "^8.1.0"
   },
   "scripts": {
-    "dev": "next",
     "lint": "xo",
     "build": "next build && node generate-sw.js",
     "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
-    "start:next": "next start",
     "start": "NODE_ENV=production node server.js",
     "deploy": "npm version patch && now --name=next-hnpwa --public"
   },
