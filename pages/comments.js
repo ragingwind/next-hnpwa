@@ -47,7 +47,7 @@ export default class extends React.Component {
 			}
 
 			.info a {
-				color: gray;
+				color: #0f0f0f;
 				text-decoration: none;
 			}
 
