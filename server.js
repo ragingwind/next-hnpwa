@@ -1,50 +1,65 @@
+const fs = require('fs')
 const path = require('path')
-const express = require('express')
-const compression = require('compression')
+const micro = require('micro')
 const next = require('next')
+const Router = require('router')
+const finalhandler = require('finalhandler')
 const firebase = require('firebase')
+const compression = require('compression')
 const hackernews = require('firebase-hackernews')
 
+// instance for services
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
 const handle = app.getRequestHandler()
-const serve = (subpath, cache) => express.static(
-	path.resolve(__dirname, subpath),
-	{maxAge: cache && !dev ? 1000 * 60 * 60 * 24 * 30 : 0}
-)
-
 const hnservice = hackernews.init(firebase)
+
+// serve functions
+const page = async (req, res) => {
+  req.url = req.originalUrl
+  micro.send(res, 200, await handle(req, res))
+}
+const stories = async (req, res) => {
+  micro.send(res, 200, await hnservice.fetch(req.originalUrl))
+}
+const static = (req, res, dest) => {
+  return new Promise((resolve, reject) => {
+    if (!dest) {
+      dest = `.${req.originalUrl}`
+    }
+
+    fs.readFile(dest, (err, data) => {
+      if (err) {
+        reject(err)
+        return
+      }
+
+      if (/\.js$/.test(dest)) {
+        res.setHeader('Content-Type', 'application/javascript')
+      } else if (/\.json$/.test(dest)) {
+        res.setHeader('Content-Type', 'application/json')
+      }
+
+      micro.send(res, 200, data)
+
+      resolve()
+    })
+  })
+}
 
 app.prepare()
 	.then(() => hnservice.watch())
 	.then(() => {
-		const server = express()
+    const router = new Router()
 
-		server.use(compression({threshold: 0}))
-		server.use('/static', serve('./static', true))
-		server.use('/service-worker.js', serve('./.next/service-worker.js', true))
-		server.use('/manifest.json', serve('./static/manifest.json', true))
+    router.use(compression({threshold: 0}))
+    router.get('/', page)
+    router.use('/_next', page)
+    router.use('/static', static)
+    router.get('/service-worker.js', async (req, res) => await static(req, res, `./.next/service-worker.js`))
+    router.get('/manifest.jso', async (req, res) => await static(req, res, `./static/manifest.jso`))
+    router.use('/hackernews/:story', stories)
 
-		server.get('/hackernews/*', (req, res) => {
-			hnservice.fetch(req.path)
-				.then(data => {
-					res.send(typeof data === 'number' ? String(data) : data)
-				})
-				.catch(err => {
-					console.error(err)
-					res.status(500).send(err.toString())
-				})
-		})
-
-		server.get('*', (req, res) => {
-			return handle(req, res)
-		})
-
-		server.listen(3000, err => {
-			if (err) {
-				throw err
-			}
-
-			console.log('> Ready on http://localhost:3000')
-		})
-	})
+    const server = micro((req, res) => router(req, res, finalhandler(req, res)))
+    server.listen(3000)
+  })
