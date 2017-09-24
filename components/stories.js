@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 export default({type, stories, totalPage = 1, page = 1}) => (
 	<div>
-		<ui>
+		<ul>
 		{
 			stories.map((s, i) => (
-				<li key={i}>
+				<li key={i.toString()}>
 					<span className="score">
 						{s.score}
 					</span>
@@ -23,7 +23,7 @@ export default({type, stories, totalPage = 1, page = 1}) => (
 				</li>
 			))
 		}
-		</ui>
+		</ul>
 		<footer>
 		{
 			page <= totalPage &&
@@ -67,7 +67,7 @@ export default({type, stories, totalPage = 1, page = 1}) => (
 			}
 
 			.info a {
-				color: gray;
+				color: #0f0f0f;
 				text-decoration: none;
 			}
 
