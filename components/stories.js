@@ -31,6 +31,10 @@ export default({type, stories, totalPage = 1, page = 1}) => (
 		}
 		</footer>
 		<style jsx>{`
+			ul {
+				padding: 0;
+			}
+
 			li {
 				list-style-type: none;
 				position: relative;
