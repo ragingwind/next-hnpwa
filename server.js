@@ -50,10 +50,16 @@ app.prepare()
 	.then(() => hnservice.watch())
 	.then(() => {
 		const router = new Router()
+		const routes = {
+			'/service-worker.js': `./.next/service-worker.js`,
+			'/manifest.json': `./static/manifest.json`,
+			'/favicon.ico': `./static/favicon.ico`
+		}
 
-		router.get('/service-worker.js', async (req, res) => await static(req, res, `./.next/service-worker.js`))
-		router.get('/manifest.json', async (req, res) => await static(req, res, `./static/manifest.json`))
-		router.get('/favicon.ico', async (req, res) => await static(req, res, `./static/favicon.ico`))
+		for (const [k, v] of Object.entries(routes)) {
+			router.get(k, async (req, res) => await static(req, res, v))
+		}
+
 		router.use('/hackernews/:story', stories)
 		router.use('/_next', page)
 		router.use('/static', static)
