@@ -1,4 +1,4 @@
-const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
+const {WebpackBundleSizeAnalyzerPlugin} = require('webpack-bundle-size-analyzer')
 
 module.exports = {
 	webpack: (config, {dev}) => {
@@ -9,11 +9,7 @@ module.exports = {
 		// yarn build:report
 		if (process.env.npm_config_report) {
 			config.plugins.push(
-				new BundleAnalyzerPlugin({
-					analyzerMode: 'disabled',
-					generateStatsFile: true,
-					statsFilename: 'stats.json'
-				})
+				new WebpackBundleSizeAnalyzerPlugin('stats.txt')
 			)
 		}
 

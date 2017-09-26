@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "xo",
     "build": "next build && node generate-sw.js",
-    "report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
+    "report": "npm run build --report && cat .next/stats.txt",
     "start": "NODE_ENV=production node server.js",
     "deploy": "now --name=next-hnpwa --public",
     "remove": "now rm next-hnpwa --safe"
@@ -26,7 +26,7 @@
     "load-json-file": "^2.0.0",
     "micro": "^9.0.0",
     "router": "^1.3.1",
-    "webpack-bundle-analyzer": "^2.8.2",
+    "webpack-bundle-size-analyzer": "^2.7.0",
     "workbox-build": "^1.0.1",
     "workbox-webpack-plugin": "^1.0.1",
     "xo": "^0.18.2"
