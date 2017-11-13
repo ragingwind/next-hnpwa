@@ -11,14 +11,20 @@
 Watch the [demo](https://next-hnpwa.now.sh/)
 
 ```sh
+# Install all of dependencies
+npm install
+
+# Builds the app for production to the .next folder.
+npm run build
+
 # Starts the application in production mode with express
 npm start
 
-# Builds the app for production to the .next folder.
-npm build
+# Open localhost on the browser (open command exists in macos)
+open http://localhost:3000/
 
-# Make a reprot in analyzing
-npm report
+# Make a reprot in analyzing as development
+npm run report
 ```
 
 # License
