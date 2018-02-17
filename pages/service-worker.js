@@ -27,7 +27,7 @@ const swProdRegistration =
 		if ('serviceWorker' in navigator &&
 				(window.location.protocol === 'https:' || isLocalhost)) {
 
-			navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+			navigator.serviceWorker.register('/sw.js').then(function(registration) {
 				console.log('ServiceWorker registration successful with scope: ', registration.scope);
 			}).catch(function(e) {
 				console.error('Error during service worker registration:', e)

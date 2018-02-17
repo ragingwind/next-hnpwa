@@ -51,7 +51,7 @@ app.prepare()
 	.then(() => {
 		const router = new Router()
 		const routes = {
-			'/service-worker.js': `./.next/service-worker.js`,
+			'/sw.js': `./static/workbox/sw.js`,
 			'/manifest.json': `./static/manifest.json`,
 			'/favicon.ico': `./static/favicon.ico`
 		}
