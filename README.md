@@ -1,6 +1,6 @@
 # next-hnpwa
 
-> HNPWA (Hacker News PWA) with Next.js. Watch the [demo](https://next-hnpwa.now.sh/) first. It is essential to help you understand how it works HNPWA with the target framework. Backed by [firebase-hackernews](https://www.npmjs.com/package/firebase-hackernews) 3rd-party lib for [Hacker News firebase API](https://github.com/HackerNews/API), which is [running on service worker](https://github.com/codebusking/next-hnpwa-guide-kit/blob/master/generate-sw.js#L71) with brand new service worker SDK from Google, called [Workbox](https://workboxjs.org)
+> [HNPWA](https://hnpwa.com/) with Next.js. Watch the [demo](https://next-hnpwa.now.sh/) first. This project is essential to help you understand how it works HNPWA with Next.js, react framework, supporting powerful features like lazy loading, code-splitting. Also, backed by [Official HNPWA APIs serving on CDN](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md), and mount a brand new service worker SDK from Google, [Workbox](https://workboxjs.org) for offline cache and more.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124117/27153738-93aab18e-518d-11e7-92d9-d4c70e05ca4e.png" width="1024" />
