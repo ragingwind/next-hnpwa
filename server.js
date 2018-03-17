@@ -5,13 +5,11 @@ const next = require('next')
 const Router = require('router')
 const finalhandler = require('finalhandler')
 const firebase = require('firebase')
-const hackernews = require('firebase-hackernews')
 
 // instance for services
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
 const handle = app.getRequestHandler()
-const hnservice = hackernews.init(firebase)
 
 // serve functions
 const page = async (req, res) => {
@@ -47,7 +45,6 @@ const static = (req, res, dest) => {
 }
 
 app.prepare()
-	.then(() => hnservice.watch())
 	.then(() => {
 		const router = new Router()
 		const routes = {
@@ -60,7 +57,6 @@ app.prepare()
 			router.get(k, async (req, res) => await static(req, res, v))
 		}
 
-		router.use('/hackernews/:story', stories)
 		router.use('/_next', page)
 		router.use('/static', static)
 		router.get('/', page)

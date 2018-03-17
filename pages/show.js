@@ -1,3 +1,1 @@
-import Stories from './_stories'
-
-export default Stories
+export {default} from './_feed'

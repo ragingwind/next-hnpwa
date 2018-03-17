@@ -6,6 +6,7 @@
   },
   "scripts": {
     "lint": "xo",
+    "dev": "next",
     "build": "next build",
     "report": "npm run build --report && cat .next/stats.txt",
     "start": "NODE_ENV=production node server.js",

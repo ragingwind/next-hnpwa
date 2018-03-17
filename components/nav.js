@@ -1,24 +1,30 @@
 import Link from 'next/link'
 
-const links = [
-	{href: '/', label: '▲'},
-	{href: '/top', label: 'Top'},
-	{href: '/new', label: 'New'},
-	{href: '/best', label: 'Best'},
-	{href: '/ask', label: 'Ask'},
-	{href: '/show', label: 'Show'},
-	{href: '/job', label: 'Job'}
-]
+const FeedLink = ({href, label}) =>
+	<span>
+		<Link href={href}><a>{label}</a></Link>
+		<style jsx>{`
+			{
+				padding: 6px 4px;
+			}
+			a {
+				color: white;
+				text-decoration: none;
+				font-size: 16px;
+			}
+		`}</style>
+	</span>
 
 export default () => (
 	<nav>
-		<header>{
-			links.map((link, i) => (<span key={`nav-link-${i}`}>
-				<Link href={link.href}><a>{link.label}</a></Link>
-			</span>))
-		}</header>
+		<FeedLink href={'/'} label={'▲'} />
+		{
+			['news', 'newest', 'ask', 'show', 'jobs'].map(p => {
+				return <FeedLink key={p} href={`/${p}`} label={p.toUpperCase()} />
+			})
+		}
 		<style jsx>{`
-			nav {
+			{
 				text-align: center;
 				background-color: black;
 				color: white;
@@ -28,28 +34,6 @@ export default () => (
 				top: 0;
 				left: 0;
 				right: 0;
-			}
-
-			header {
-				display: flex;
-				padding: 0;
-				margin: 0;
-			}
-
-			span {
-				padding: 6px 8px;
-			}
-
-			a {
-				color: white;
-				text-decoration: none;
-				font-size: 16px;
-			}
-
-			@media (max-width: 600px) {
-				header {
-					justify-content: none;
-				}
 			}
 		`}</style>
 	</nav>
