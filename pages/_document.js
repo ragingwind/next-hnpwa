@@ -11,9 +11,6 @@ const Styles = () => (
 			color: #0e0e0e;
 			text-decoration: none;
 		};
-		.commment {
-			border-top: 1px solid grey;
-		};
 		@media (max-width: 600px) {
 			header {
 				justify-content: none;

@@ -9,7 +9,7 @@ const Feed = ({feed}) =>
 			</div>
 			<div>
 				<span><Link href={`/user?id=${feed.user}`}><a>{feed.user || 'John Doh'}</a></Link></span>
-				<span> | <Link href={`/item=${feed.id}`}><a>{feed.comments_count || 0} comments</a></Link></span>
+				<span> | <Link href={`/comments?id=${feed.id}`}><a>{feed.comments_count || 0} comments</a></Link></span>
 			</div>
 		</span>
 		<style jsx>{`
