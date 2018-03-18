@@ -8,8 +8,8 @@ const Feed = ({feed}) =>
 				<a href={feed.url} target="_black">{feed.title}</a>
 			</div>
 			<div>
-				<span><Link href={`/?user=${feed.user}`}><a>{feed.user || 'John Doh'}</a></Link></span>
-				<span> | <Link href={`/?item=${feed.id}`}><a>{feed.comments_count || 0} comments</a></Link></span>
+				<span><Link href={`/user?id=${feed.user}`}><a>{feed.user || 'John Doh'}</a></Link></span>
+				<span> | <Link href={`/item=${feed.id}`}><a>{feed.comments_count || 0} comments</a></Link></span>
 			</div>
 		</span>
 		<style jsx>{`
@@ -33,37 +33,31 @@ const Feed = ({feed}) =>
 		`}</style>
 	</li>
 
-const More = ({url}) => {
-	const {pathname, query} = url
-	const maxPage = {
-		'/news': 10,
-		'/newest': 10,
-		'/ask': 2,
-		'/show': 2,
-		'/jobs': 1
-	}
-
-	query.page = Number.parseInt(query.page) || 1
-
-	return (
-		<div>
-			{
-				query.page < maxPage[pathname]
-					? <Link href={`${pathname}?page=${query.page + 1}`}><a>More...</a></Link>
-					: ''
-			}
-			<style jsx>{`
-				padding: 0 12px
-			`}</style>
-		</div>
-	)
+const maxPage = {
+	'/news': 10,
+	'/newest': 10,
+	'/ask': 2,
+	'/show': 2,
+	'/jobs': 1
 }
+
+const More = ({feed, page}) =>
+	<div>
+		{
+			page < maxPage[feed]
+				? <Link href={`${feed}?page=${page + 1}`}><a>More...</a></Link>
+				: ''
+		}
+		<style jsx>{`
+			padding: 0 12px
+		`}</style>
+	</div>
 
 const Feeds = ({feeds, url}) =>
 	<div>
 		<ul>{feeds.map(f => <Feed key={f.id} feed={f}/>)}</ul>
 		<div>
-			<More url={url} />
+			<More feed={url.pathname} page={Number.parseInt(url.query.page || 1)} />
 		</div>
 		<style jsx>{`
 			ul {
