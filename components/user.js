@@ -1,19 +1,13 @@
 export default({user}) => (
 	<div>
-		<ul>
-			<h1>{user.id}</h1>
-			<li>Created: {user.created}</li>
-			<li>Karma: {user.karma}</li>
-			<li>Delay: {user.delay}</li>
-			<li>About: {user.about}</li>
-		</ul>
+		<h1>{user.id}</h1>
+		<div>Created: {user.created}</div>
+		<div>Karma: {user.karma}</div>
+		<div className='about' dangerouslySetInnerHTML={{__html: user.about || ''}}></div>
 		<style jsx>{`
-			li {
-				margin: 10px, 0;
-				list-style-type: none;
-				padding-left: 10px;
-				display: flex;
-				margin-top: 5px;
+			.about {
+				padding-top: 15px;
+				word-break: break-word
 			}
 		`}</style>
 	</div>
