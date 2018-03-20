@@ -53,8 +53,9 @@ const More = ({feed, page}) => (
 			padding: 0 12px
 		`}</style>
 	</div>
+)
 
-const Feeds = ({feeds, url}) =>
+const Feeds = ({feeds, url}) => (
 	<div>
 		<ul>{feeds.map(f => <Feed key={f.id} feed={f}/>)}</ul>
 		<div>
