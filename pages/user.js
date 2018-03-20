@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import Container from '../components/container'
+import Page from '../components/page'
 import User from '../components/user'
 import fetch from '../lib/fetch'
 
@@ -12,9 +12,9 @@ export default class extends Component {
 
 	render() {
 		return (
-			<Container>
+			<Page>
 				<User user={this.props.user}/>
-			</Container>
+			</Page>
 		)
 	}
 }
