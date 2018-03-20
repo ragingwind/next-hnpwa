@@ -24,8 +24,20 @@ export default () => (
 				return <FeedLink key={p} href={`/${p}`} label={p.toUpperCase()} />
 			})
 		}
-		<style jsx>{`
-			{
+		<style global jsx>{`
+			body {
+				font-family: Helvetica, sans-serif;
+			};
+			a {
+				color: #0e0e0e;
+				text-decoration: none;
+			};
+			@media (max-width: 600px) {
+				header {
+					justify-content: none;
+				}
+			};
+			nav {
 				text-align: center;
 				background-color: black;
 				color: white;
