@@ -6,9 +6,11 @@ const isDev = process.env.NODE_ENV !== 'production'
 
 export default class extends Document {
 	static getInitialProps({renderPage}) {
-		const {html, head, errorHtml, chunks} = renderPage()
-    return {html, head, errorHtml, chunks, styles: flush()}
-	}
+		return {
+			...renderPage(),
+			styles: flush()
+		}
+  }
 
 	render() {
 		return (
