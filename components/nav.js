@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const FeedLink = ({href, label}) =>
+const FeedLink = ({href, label}) => (
 	<span>
 		<Link href={href}><a>{label}</a></Link>
 		<style jsx>{`
@@ -14,6 +14,7 @@ const FeedLink = ({href, label}) =>
 			}
 		`}</style>
 	</span>
+)
 
 export default () => (
 	<nav>

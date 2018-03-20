@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const Feed = ({feed}) =>
+const Feed = ({feed}) => (
 	<li>
 		<span className='point'>{feed.points || 1}</span>
 		<span>
@@ -32,6 +32,7 @@ const Feed = ({feed}) =>
 			};
 		`}</style>
 	</li>
+)
 
 const maxPage = {
 	'/news': 10,
@@ -41,7 +42,7 @@ const maxPage = {
 	'/jobs': 1
 }
 
-const More = ({feed, page}) =>
+const More = ({feed, page}) => (
 	<div>
 		{
 			page < maxPage[feed]
@@ -65,5 +66,6 @@ const Feeds = ({feeds, url}) =>
 			};
 		`}</style>
 	</div>
+)
 
 export default Feeds

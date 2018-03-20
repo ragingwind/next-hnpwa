@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const Comment = ({comment}) =>
+const Comment = ({comment}) => (
 	<div className="comment">
 		<div dangerouslySetInnerHTML={{__html: comment.content}}></div>
 		<div>
@@ -14,8 +14,9 @@ const Comment = ({comment}) =>
 			};
 		`}</style>
 	</div>
+)
 
-const Comments = ({item}) =>
+const Comments = ({item}) => (
 	<div>
 		<div>
 			<h2>
@@ -31,6 +32,6 @@ const Comments = ({item}) =>
 			{item.comments.map(c => <Comment key={c.id} comment={c} />)}
 		</div>
 	</div>
-
+)
 
 export default Comments
