@@ -4,7 +4,7 @@ const Comment = ({comment}) => (
 	<div className="comment">
 		<div dangerouslySetInnerHTML={{__html: comment.content}}></div>
 		<div>
-			<Link href={`/?user=${comment.user}`}><a>{comment.user}</a></Link> | {comment.time_ago}
+			<Link href={`/user?id=${comment.user}`}><a>{comment.user}</a></Link> | {comment.time_ago}
 		</div>
 		<style jsx>{`
 			.comment {
