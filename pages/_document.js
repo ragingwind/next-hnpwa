@@ -20,7 +20,7 @@ export default class extends Document {
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta name="theme-color" content="#000000" />
 					<link rel="icon" href="/static/favicon.ico" />
-					<link rel="manifest" href="/static/manifest.json" />
+					<link rel="manifest" href="/static/manifest/manifest.json" />
 					<title>HNPWA with Next.js</title>
 				</Head>
 				<body>
