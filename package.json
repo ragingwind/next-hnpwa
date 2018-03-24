@@ -8,6 +8,7 @@
     "lint": "xo",
     "dev": "NODE_ENV=development node server.js",
     "build": "next build",
+    "clean": "rm -rf ./static/workbox ./static/manifest .next",
     "start": "NODE_ENV=production node server.js",
     "deploy": "now --name=next-hnpwa --public",
     "remove": "now rm next-hnpwa --safe"
@@ -25,7 +26,7 @@
     "globby": "^6.1.0",
     "load-json-file": "^2.0.0",
     "micro": "^9.0.0",
-    "next-manifest": "^1.2.0",
+    "next-manifest": "^1.3.0",
     "next-workbox": "^1.4.0",
     "router": "^1.3.1",
     "xo": "^0.18.2"
