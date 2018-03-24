@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const FeedLink = ({href, label}) => (
 	<span>
-		<Link href={href}><a>{label}</a></Link>
+		<Link prefetch href={href}><a>{label}</a></Link>
 		<style jsx>{`
 			{
 				padding: 6px 4px;
