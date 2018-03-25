@@ -19,7 +19,7 @@ export default class extends Document {
 				<Head>
 					<link rel="icon" href="/static/favicon.ico" />
 					<title>HNPWA with Next.js</title>
-					<Manifest themeColor='#000000' initialScale='1' />
+					<Manifest themeColor='#000000' />
 				</Head>
 				<body>
 					<Main />

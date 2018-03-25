@@ -20,7 +20,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "next-manifest": "^1.4.0",
+    "next-manifest": "^1.5.0",
     "next-workbox": "^1.4.0"
   }
 }
