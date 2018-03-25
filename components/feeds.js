@@ -55,11 +55,12 @@ const More = ({feed, page}) => (
 	</div>
 )
 
-const Feeds = ({feeds, url}) => (
+const Feeds = ({feeds, url: {pathname, query}}) => (
 	<div>
 		<ul>{feeds.map(f => <Feed key={f.id} feed={f}/>)}</ul>
 		<div>
-			<More feed={url.pathname} page={Number.parseInt(url.query.page || 1)} />
+			<More feed={pathname === '/' ? '/news' : pathname}
+						page={Number.parseInt(query.page || 1)} />
 		</div>
 		<style jsx>{`
 			ul {
