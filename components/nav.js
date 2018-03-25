@@ -38,7 +38,7 @@ export default () => (
 				}
 			};
 			nav {
-				text-align: center;
+				text-align: left;
 				background-color: black;
 				color: white;
 				padding: 12px;
