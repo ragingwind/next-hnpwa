@@ -6,20 +6,16 @@
 <img src="https://user-images.githubusercontent.com/124117/37629143-7c36d5fa-2c20-11e8-9da8-7437c91d8c7d.png" width="1024" />
 </p>
 
-## Getting Started
+## Getting Started with Now 2.0
+
+This version only works on [now 2.0 from zeit](https://zeit.co/now)
 
 ```sh
 # Install all of dependencies
 npm install
 
-# Builds the app for production to the .next folder.
-npm run build
-
-# Starts the application in production mode with express
-npm start
-
-# Open localhost on the browser (open command exists in macos)
-open http://localhost:3000/
+# Deploying to now
+npm run deploy
 
 # Make a reprot in analyzing as development
 npm run report

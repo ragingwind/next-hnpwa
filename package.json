@@ -1,26 +1,20 @@
 {
   "name": "next-hnpwa",
   "version": "1.0.8",
-  "engines": {
-    "node": "^8.1.0"
-  },
   "scripts": {
-    "lint": "xo",
-    "dev": "NODE_ENV=development node server.js",
     "build": "next build",
-    "clean": "rm -rf ./static/workbox ./static/manifest .next",
-    "start": "NODE_ENV=production node server.js",
-    "deploy": "now --name=next-hnpwa --public",
+    "deploy": "node ./build-id && now --name=next-hnpwa --public",
     "remove": "now rm next-hnpwa --safe"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "next": "^5.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "next": "^9.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "next-manifest": "^1.5.0",
-    "next-workbox": "^1.4.0"
+    "next-build-id": "^2.0.1",
+    "next-manifest": "^3.0.1",
+    "next-workbox": "^2.1.0"
   }
 }
