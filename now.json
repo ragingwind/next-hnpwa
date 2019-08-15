@@ -1,3 +1,19 @@
 {
-  "alias": "next-hnpwa.now.sh"
+	"version": 2,
+	"name": "next-hnpwa",
+	"alias": [
+		"next-hnpwa.now.sh"
+	],
+	"routes": [
+		{
+			"src": "/sw.js",
+			"dest": "_next/static/bc1e445c3f173e3f74db7ccb9b3db637d0af9582/pages/sw.js"
+		}
+	],
+	"builds": [
+		{
+			"src": "next.config.js",
+			"use": "@now/next"
+		}
+	]
 }
